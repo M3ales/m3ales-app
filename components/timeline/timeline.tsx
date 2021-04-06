@@ -24,6 +24,7 @@ export function Timeline(props) : JSX.Element {
                                 {value.longDescription}
                             </div>
                         </div>
+                        <div className={styles.date}>2021</div>
                     </div>)
                 })
             }
