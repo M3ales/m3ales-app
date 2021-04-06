@@ -1,18 +1,19 @@
 import Head from 'next/head'
 import React from 'react'
-import { Timeline } from '../components/timeline/timeline'
+import { Timeline, TimelineEvents } from '../components/timeline/timeline'
 
 export const Home = (): JSX.Element => {
-  const timeline = [
+  const timeline : TimelineEvents[] = [
         {
             "title" : "Relationship Tooltips",
             "shortDescription": "A Short Description",
             "longDescription": "A Long Description",
+            "date" : "2019",
             "technologies": [
                 {
                     "name": "C#",
                     "tooltip" : "Strongly typed 3rd generation language",
-                    "colour" : "white"
+                    "colour" : "green"
                 },
                 {
                   "name": "Stardew Valley",
@@ -25,11 +26,12 @@ export const Home = (): JSX.Element => {
           "title" : "Relationship Tooltips",
           "shortDescription": "A Short Description",
           "longDescription": "A Long Description",
+          "date" : "2020",
           "technologies": [
               {
                   "name": "C#",
                   "tooltip" : "Strongly typed 3rd generation language",
-                  "colour" : "white"
+                  "colour" : "blue"
               },
               {
                 "name": "Stardew Valley",
@@ -44,10 +46,11 @@ export const Home = (): JSX.Element => {
     <Head>
       <title>M3ales - Portfolio</title>
       <link rel="icon" href="/favicon.ico" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
 
     <main>
-      <Timeline items={timeline}/>
+      <Timeline events={timeline}/>
     </main>
 
     <style jsx global>{`

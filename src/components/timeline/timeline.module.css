@@ -3,7 +3,6 @@
 .timeline {
   position: relative;
   max-width: 1600px;
-  min-width: 100px;
   width:100%;
   margin: 0 auto;
   font-family: 'Ubuntu Mono', monospace;
@@ -83,6 +82,70 @@
   background-color: #2e2e2e;
 }
 
+.date {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  color: #5c5c5c;
+}
+
+.left > .date {
+  right: -60px;
+  top: 47px;
+}
+
+.right > .date {
+  left: -60px;
+  top: 47px;
+}
+
+.tech {
+  display: inline;
+}
+
+/* Tech Items */
+.tech > .white, .tech > .green, .tech > .blue{
+  display:inline-block;
+  border: 1px solid white;
+  border-radius: .8em;
+  padding: .2em .5em;
+  word-break: keep-all;
+  font-size: .8em;
+}
+
+/* Tech Colours */
+/* White */
+.tech > .white {
+  background-color:rgba(255,255,255,0.2);
+}
+
+/* Blue */
+.tech > .blue {
+  background-color:rgba(0, 119, 255, 0.2);
+}
+
+/* Green */
+.tech > .green {
+  background-color: rgba(0,255,0,.2);
+  color: rgb(100,200,100);
+  border: 1px solid green;
+}
+
+.content > .title {
+  font-size: 1.3em;
+  padding-bottom: .2em;
+  font-weight: bold;
+  font-family: 'Ubuntu', Sans-Serif;
+}
+
+.content > .shortDescription {
+  padding: .4em 0;
+}
+
+.hidden {
+  display:none;
+}
+
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
 /* Place the timelime to the left */
@@ -104,6 +167,10 @@
     border: 1px solid white;
   }
 
+  .content {
+    margin-left:50px;
+  }
+
 /* Make sure all circles are at the same spot */
   .left::after, .right::after {
     left: 17px;
@@ -113,64 +180,14 @@
   .right {
     left: 0%;
   }
+  
+  .left > .date {
+    left: 50px;
+    top: 47px;
+  }
+
+  .right > .date {
+    left: 50px;
+    top: 47px;
+  }
 }
-
-.tech {
-  display: inline;
-}
-
-.tech > .itemWhite, .tech > .itemGreen, .tech > .itemBlue{
-  display:inline-block;
-  border: 1px solid white;
-  border-radius: .8em;
-  padding: .2em .5em;
-  word-break: keep-all;
-  font-size: .8em;
-}
-
-.tech > .itemWhite {
-  background-color:rgba(255,255,255,0.2);
-}
-
-.tech > .itemBlue {
-  background-color:rgba(0, 119, 255, 0.2);
-}
-
-.tech > .itemGreen {
-  background-color: rgba(0,255,0,.2);
-  color: rgb(100,200,100);
-  border: 1px solid green;
-}
-
-.content > .title {
-  font-size: 1.3em;
-  padding-bottom: .2em;
-  font-weight: bold;
-  font-family: 'Ubuntu', Sans-Serif;
-}
-
-.content > .descriptionShort {
-  padding: .4em 0;
-}
-
-.hidden {
-  display:none;
-}
-
-.left > .date {
-content: '';
-position: absolute;
-right: -8%;
-top: 47px;
-z-index: 2;
-color: #5c5c5c;
-};
-
-.right > .date {
-content: '';
-position: absolute;
-left: -6%;
-top: 47px;
-z-index: 2;
-color: #5c5c5c;
-};
