@@ -41,7 +41,76 @@ export const Home = (): JSX.Element => {
                 "colour" : "white"
             },
           ]
-      }
+        },
+        {
+          "title" : "Relationship Tooltips",
+          "shortDescription": "A Short Description",
+          "longDescription": "A Long Description",
+          "date" : "2020",
+          "technologies": [
+              {
+                  "name": "C#",
+                  "tooltip" : "Strongly typed 3rd generation language",
+                  "colour" : "blue"
+              },
+              {
+                "name": "Stardew Valley",
+                "tooltip" : "Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.",
+                "colour" : "white"
+            },
+          ]
+        },        {
+          "title" : "Relationship Tooltips",
+          "shortDescription": "A Short Description",
+          "longDescription": "A Long Description",
+          "date" : "2020",
+          "technologies": [
+              {
+                  "name": "C#",
+                  "tooltip" : "Strongly typed 3rd generation language",
+                  "colour" : "blue"
+              },
+              {
+                "name": "Stardew Valley",
+                "tooltip" : "Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.",
+                "colour" : "white"
+            },
+          ]
+        },        {
+          "title" : "Relationship Tooltips",
+          "shortDescription": "A Short Description",
+          "longDescription": "A Long Description",
+          "date" : "2020",
+          "technologies": [
+              {
+                  "name": "C#",
+                  "tooltip" : "Strongly typed 3rd generation language",
+                  "colour" : "blue"
+              },
+              {
+                "name": "Stardew Valley",
+                "tooltip" : "Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.",
+                "colour" : "white"
+            },
+          ]
+        },        {
+          "title" : "Relationship Tooltips",
+          "shortDescription": "A Short Description",
+          "longDescription": "A Long Description",
+          "date" : "2020",
+          "technologies": [
+              {
+                  "name": "C#",
+                  "tooltip" : "Strongly typed 3rd generation language",
+                  "colour" : "blue"
+              },
+              {
+                "name": "Stardew Valley",
+                "tooltip" : "Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.",
+                "colour" : "white"
+            },
+          ]
+        }
     ];
 
   return (<div className="container">
@@ -52,7 +121,7 @@ export const Home = (): JSX.Element => {
     </Head>
 
     <main>
-      <Hero text="M3ales Portfolio" next="Projects"/>
+      <Hero text="M3ales" next="Projects"/>
       <Section title="Projects"/>
       <Timeline events={timeline}/>
       <Section title="Technology"/>
