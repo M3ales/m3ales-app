@@ -105,13 +105,16 @@
 }
 
 /* Tech Items */
-.tech > .white, .tech > .green, .tech > .blue{
+.tech > .white, 
+.tech > .green, 
+.tech > .blue {
   display:inline-block;
   border: 1px solid white;
   border-radius: .8em;
   padding: .2em .5em;
   word-break: keep-all;
   font-size: .8em;
+  margin: 2px;
 }
 
 /* Tech Colours */
