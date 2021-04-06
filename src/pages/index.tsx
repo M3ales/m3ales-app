@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
+import { Hero } from '../components/hero/hero';
+import { Section } from '../components/section/section';
 import { Timeline, TimelineEvents } from '../components/timeline/timeline'
 
 export const Home = (): JSX.Element => {
@@ -50,23 +52,13 @@ export const Home = (): JSX.Element => {
     </Head>
 
     <main>
+      <Hero text="M3ales Portfolio" next="Projects"/>
+      <Section title="Projects"/>
       <Timeline events={timeline}/>
+      <Section title="Technology"/>
+      <Section title="Experience"/>
+      <Section title="Contact"/>
     </main>
-
-    <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        background-color: #1e1e1e;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    `}</style>
   </div>);
 }
 

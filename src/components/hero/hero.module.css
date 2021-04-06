@@ -1,0 +1,33 @@
+.hero {
+    width:100%;
+    height:100vh;
+    display: flex;
+}
+.hero > .text {
+    color: white;
+    margin: auto;
+    font-size:5em;
+}
+
+/*this css is wild?*/
+.continue {
+    position:absolute;
+    bottom:50px;
+    left:50%;
+    width:50px;
+    height:50px;
+    transform:rotate(45deg);
+}
+
+.continue > span {
+    position:absolute;
+    left:-25px;
+    top:0;
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+    border:none;
+    border-bottom:3px solid #fff;
+    border-right:3px solid #fff;
+    animation:animate 1s linear infinite;
+} 
