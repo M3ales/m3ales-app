@@ -121,7 +121,7 @@ export const Home = (): JSX.Element => {
     </Head>
 
     <main>
-      <Hero text="M3ales" next="Projects"/>
+      <Hero text="M3ales" message="Software, Photography, Music, stuff" next="Projects"/>
       <Section title="Projects"/>
       <Timeline events={timeline}/>
       <Section title="Technology"/>

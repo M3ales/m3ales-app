@@ -27,7 +27,7 @@
 
 /* Container around content */
 .container {
-  margin: 10px 0;
+  margin: 40px 0;
   padding: 10px 40px;
   position: relative;
   width:50%;
@@ -42,7 +42,7 @@
   border: 2px solid #424242;
   background-color: #1e1e1e;
   right:-10px;
-  top: 45px;
+  top: 50px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -92,12 +92,12 @@
 
 .left > .date {
   right: -60px;
-  top: 47px;
+  top: 50px;
 }
 
 .right > .date {
   left: -60px;
-  top: 47px;
+  top: 50px;
 }
 
 .tech {
@@ -187,11 +187,11 @@
   
   .left > .date {
     left: 50px;
-    top: 47px;
+    top: 50px;
   }
 
   .right > .date {
     left: 50px;
-    top: 47px;
+    top: 50px;
   }
 }
