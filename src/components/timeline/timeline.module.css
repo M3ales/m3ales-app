@@ -2,7 +2,7 @@
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
-  max-width: 1600px;
+  max-width: 1000rem;
   width:100%;
   margin: 0 auto;
   font-family: 'Ubuntu Mono', monospace;
@@ -72,7 +72,7 @@
 
 /* The actual content */
 .content {
-  padding: 10px 15px;
+  padding: 0.8em 0.9em;
   background-color: inherit;
   position: relative;
   border-radius: 0px;
@@ -92,12 +92,12 @@
 
 .left > .date {
   right: -60px;
-  top: 50px;
+  top: 52px;
 }
 
 .right > .date {
   left: -60px;
-  top: 50px;
+  top: 52px;
 }
 
 .tech {
@@ -160,8 +160,8 @@
 /* Full-width containers */
   .container {
     width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
+    padding-left: 4.5em;
+    padding-right: 2em;
   }
 
 /* Make sure that all arrows are pointing leftwards */
@@ -186,7 +186,7 @@
   }
   
   .left > .date {
-    left: 50px;
+    left: 52px;
     top: 50px;
   }
 

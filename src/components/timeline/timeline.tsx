@@ -1,4 +1,7 @@
 import styles from './timeline.module.css'
+import { motion, useAnimation } from "framer-motion"
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 interface Technology {
     name: string
@@ -27,17 +30,32 @@ export interface TimelineEvents{
 }
 
 export function Timeline({ events }: { events : TimelineEvents[]}): JSX.Element {
+    
     return (
         <div className={styles.timeline}>
             {events.map((value, index) => {
+                const variants = {
+                    hidden: { opacity: 0, x: index % 2 === 0 ? 10 : -10 },
+                    visible: { opacity: 1, x:0 },
+                    hiddenDate: {opacity: 0, x: index % 2 === 0 ? -10 : 10}
+                };
+            
+                const [ref, inView, entry] = useInView({
+                    threshold: 0
+                });
                 return (
-                    <div
+                   <div
+                        ref={ref}
                         key={index}
                         className={
                             `${styles.container} ${index % 2 === 0 ? styles.left : styles.right}`
                         }
                     >
-                        <div className={styles.content}>
+                        <motion.div 
+                        initial={variants.hidden}
+                        animate={inView ? variants.visible : variants.hidden}
+                        transition={{ delay:0.3, ease: "easeOut", duration: 1}} 
+                        className={styles.content}>
                             <div className={styles.title}>
                                 <span>{value.title}</span>
                             </div>
@@ -56,8 +74,13 @@ export function Timeline({ events }: { events : TimelineEvents[]}): JSX.Element 
                             >
                                 {value.longDescription}
                             </div>
-                        </div>
-                        <div className={styles.date}>{value.date}</div>
+                        </motion.div>
+                        <motion.div 
+                        animate={inView ? variants.visible : variants.hiddenDate}
+                        transition={{ease:"easeIn", duration:0.5}}
+                        className={styles.date}>
+                            {value.date}
+                        </motion.div>
                     </div>
                 )
             })}
