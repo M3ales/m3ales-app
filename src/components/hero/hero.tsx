@@ -29,9 +29,7 @@ export function Hero({ text, message, next } : { text : string, message : string
                 animate={{ opacity: 1 }}
                 transition={{ ease: "easeOut", duration: 2, delay: 2 }}
             className={styles.continue}>
-                <Link href={`#${next}`}>
-                    <span></span>
-                </Link>
+                <span onClick={ () => document.getElementById(next).scrollIntoView({ behavior: "smooth" })}></span>
             </motion.div>
         </div>
     );
