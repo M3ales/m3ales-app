@@ -13,7 +13,7 @@ export function Hero({ text, message, next } : { text : string, message : string
             <motion.div 
                 initial="hidden" 
                 animate="visible" 
-                transition={{ease: "easeOut", duration: 2}}
+                transition={{ease: "easeOut", duration: 2, delay: 1}}
                 variants={variants} 
                 className={styles.centre}
             >
@@ -27,7 +27,7 @@ export function Hero({ text, message, next } : { text : string, message : string
             <motion.div
                 initial= {{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ ease: "easeOut", duration: 2, delay: 2 }}
+                transition={{ ease: "easeOut", duration: 2, delay: 3 }}
             className={styles.continue}>
                 <span onClick={ () => document.getElementById(next).scrollIntoView({ behavior: "smooth" })}></span>
             </motion.div>

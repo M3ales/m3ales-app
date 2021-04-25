@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import { Hero } from '../components/hero/hero';
+import Navbar, { NavbarItem } from '../components/navbar/navbar';
 import { Section } from '../components/section/section';
 import { Timeline, TimelineEvents } from '../components/timeline/timeline'
 
@@ -112,7 +113,24 @@ export const Home = (): JSX.Element => {
           ]
         }
     ];
-
+  
+  const navItems : NavbarItem[] = [
+    {
+      name: "Home",
+      onSamePage: true,
+      target: "top"
+    },
+    {
+      name: "Projects",
+      onSamePage:true,
+      target: "Projects"
+    },
+    {
+      name: "Contact",
+      onSamePage:true,
+      target: "Contact"
+    }
+  ];
   return (<div className="container">
     <Head>
       <title>M3ales - Portfolio</title>
@@ -121,11 +139,10 @@ export const Home = (): JSX.Element => {
     </Head>
 
     <main>
+      <Navbar items={navItems}/>
       <Hero text="M3ales" message="Software, Photography, Music, stuff" next="Projects"/>
       <Section title="Projects"/>
       <Timeline events={timeline}/>
-      <Section title="Technology"/>
-      <Section title="Experience"/>
       <Section title="Contact"/>
     </main>
   </div>);
