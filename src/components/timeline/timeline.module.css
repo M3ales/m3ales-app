@@ -1,197 +1,199 @@
-
 /* The actual timeline (the vertical ruler) */
 .timeline {
-  position: relative;
-  max-width: 1000rem;
-  width:100%;
-  margin: 0 auto;
-  font-family: 'Ubuntu Mono', monospace;
-  box-sizing: border-box;
+    position: relative;
+    max-width: 1000rem;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Ubuntu Mono', monospace;
+    box-sizing: border-box;
 }
 
 /* The actual timeline (the vertical ruler) */
 .timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -5px;
-  background-image: linear-gradient(to bottom,
-                    rgba(255,255,255,0) 0%,
-                    rgba(66, 66, 66, 1) 5%,
-                    rgba(66, 66, 66, 1) 95%,
-                    rgba(255,255,255, 0) 100%);
+    content: '';
+    position: absolute;
+    width: 6px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(66, 66, 66, 1) 5%,
+        rgba(66, 66, 66, 1) 95%,
+        rgba(255, 255, 255, 0) 100%
+    );
 }
 
 /* Container around content */
 .container {
-  margin: 40px 0;
-  padding: 10px 40px;
-  position: relative;
-  width:50%;
+    margin: 40px 0;
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
 }
 
 /* The circles on the timeline */
 .container::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #424242;
-  background-color: #1e1e1e;
-  right:-10px;
-  top: 50px;
-  border-radius: 50%;
-  z-index: 1;
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #424242;
+    background-color: #1e1e1e;
+    right: -10px;
+    top: 50px;
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .container::focus {
-  height:50em;
+    height: 50em;
 }
 
 .timeline:first-child {
-  padding-top:3em;
+    padding-top: 3em;
 }
 
 /* Place the container to the left */
 .left {
-  left: 0;
+    left: 0;
 }
 
 /* Place the container to the right */
 .right {
-  left: 50%;
+    left: 50%;
 }
 
 /* Fix the circle for containers on the right side */
 .right::after {
-  left: -14px;
+    left: -14px;
 }
 
 /* The actual content */
 .content {
-  padding: 0.8em 0.9em;
-  background-color: inherit;
-  position: relative;
-  border-radius: 0px;
-  border: 1px solid #424242;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
-  color: white;
-  background-color: #2e2e2e;
+    padding: 0.8em 0.9em;
+    background-color: inherit;
+    position: relative;
+    border-radius: 0px;
+    border: 1px solid #424242;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    color: white;
+    background-color: #2e2e2e;
 }
 
 .date {
-  content: '';
-  position: absolute;
-  z-index: 2;
-  color: #5c5c5c;
+    content: '';
+    position: absolute;
+    z-index: 2;
+    color: #5c5c5c;
 }
 
 .left > .date {
-  right: -60px;
-  top: 52px;
+    right: -60px;
+    top: 52px;
 }
 
 .right > .date {
-  left: -60px;
-  top: 52px;
+    left: -60px;
+    top: 52px;
 }
 
 .tech {
-  display: inline;
+    display: inline;
 }
 
 /* Tech Items */
-.tech > .white, 
-.tech > .green, 
+.tech > .white,
+.tech > .green,
 .tech > .blue {
-  display:inline-block;
-  border: 1px solid white;
-  border-radius: .8em;
-  padding: .2em .5em;
-  word-break: keep-all;
-  font-size: .8em;
-  margin: 2px;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 0.8em;
+    padding: 0.2em 0.5em;
+    word-break: keep-all;
+    font-size: 0.8em;
+    margin: 2px;
 }
 
 /* Tech Colours */
 /* White */
 .tech > .white {
-  background-color:rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Blue */
 .tech > .blue {
-  background-color:rgba(0, 119, 255, 0.2);
+    background-color: rgba(0, 119, 255, 0.2);
 }
 
 /* Green */
 .tech > .green {
-  background-color: rgba(0,255,0,.2);
-  color: rgb(100,200,100);
-  border: 1px solid green;
+    background-color: rgba(0, 255, 0, 0.2);
+    color: rgb(100, 200, 100);
+    border: 1px solid green;
 }
 
 .content > .title {
-  font-size: 1.3em;
-  padding-bottom: .2em;
-  font-weight: bold;
-  font-family: 'Ubuntu', Sans-Serif;
+    font-size: 1.3em;
+    padding-bottom: 0.2em;
+    font-weight: bold;
+    font-family: 'Ubuntu', Sans-Serif;
 }
 
 .content > .shortDescription {
-  padding: .4em 0;
+    padding: 0.4em 0;
 }
 
 .hidden {
-  display:none;
+    display: none;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
-/* Place the timelime to the left */
-  .timeline::after {
-    left: 31px;
-  }
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
 
-/* Full-width containers */
-  .container {
-    width: 100%;
-    padding-left: 4.5em;
-    padding-right: 2em;
-  }
+    /* Full-width containers */
+    .container {
+        width: 100%;
+        padding-left: 4.5em;
+        padding-right: 2em;
+    }
 
-/* Make sure that all arrows are pointing leftwards */
-  .container::before {
-    left: 31px;
-    width: 39px;
-    border: 1px solid white;
-  }
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+        left: 31px;
+        width: 39px;
+        border: 1px solid white;
+    }
 
-  .content {
-    margin-left:30px;
-  }
+    .content {
+        margin-left: 30px;
+    }
 
-/* Make sure all circles are at the same spot */
-  .left::after, .right::after {
-    left: 17px;
-  }
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+        left: 17px;
+    }
 
-/* Make all right containers behave like the left ones */
-  .right {
-    left: 0%;
-  }
-  
-  .left > .date {
-    left: 52px;
-    top: 50px;
-  }
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
 
-  .right > .date {
-    left: 50px;
-    top: 50px;
-  }
+    .left > .date {
+        left: 52px;
+        top: 50px;
+    }
+
+    .right > .date {
+        left: 50px;
+        top: 50px;
+    }
 }

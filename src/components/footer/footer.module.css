@@ -1,0 +1,10 @@
+.footer {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    height: 10em;
+    display: block;
+    padding: 4em;
+    color: grey; /* TODO: Actually make nice colours */
+    font-size: 0.8em;
+}
