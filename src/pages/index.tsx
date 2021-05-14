@@ -6,124 +6,22 @@ import Navbar, { NavbarItem } from '../components/navbar/navbar'
 import { Section } from '../components/section/section'
 import { Timeline, TimelineEvents } from '../components/timeline/timeline'
 
-export const Home = (): JSX.Element => {
-    const timeline: TimelineEvents[] = [
-        {
-            title: 'Relationship Tooltips',
-            shortDescription: 'A Short Description',
-            longDescription: 'A Long Description',
-            date: '2019',
-            technologies: [
-                {
-                    name: 'C#',
-                    tooltip: 'Strongly typed 3rd generation language',
-                    colour: 'green',
-                },
-                {
-                    name: 'Stardew Valley',
-                    tooltip:
-                        'Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.',
-                    colour: 'white',
-                },
-            ],
-        },
-        {
-            title: 'Relationship Tooltips',
-            shortDescription: 'A Short Description',
-            longDescription: 'A Long Description',
-            date: '2020',
-            technologies: [
-                {
-                    name: 'C#',
-                    tooltip: 'Strongly typed 3rd generation language',
-                    colour: 'blue',
-                },
-                {
-                    name: 'Stardew Valley',
-                    tooltip:
-                        'Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.',
-                    colour: 'white',
-                },
-            ],
-        },
-        {
-            title: 'Relationship Tooltips',
-            shortDescription: 'A Short Description',
-            longDescription: 'A Long Description',
-            date: '2020',
-            technologies: [
-                {
-                    name: 'C#',
-                    tooltip: 'Strongly typed 3rd generation language',
-                    colour: 'blue',
-                },
-                {
-                    name: 'Stardew Valley',
-                    tooltip:
-                        'Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.',
-                    colour: 'white',
-                },
-            ],
-        },
-        {
-            title: 'Relationship Tooltips',
-            shortDescription: 'A Short Description',
-            longDescription: 'A Long Description',
-            date: '2020',
-            technologies: [
-                {
-                    name: 'C#',
-                    tooltip: 'Strongly typed 3rd generation language',
-                    colour: 'blue',
-                },
-                {
-                    name: 'Stardew Valley',
-                    tooltip:
-                        'Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.',
-                    colour: 'white',
-                },
-            ],
-        },
-        {
-            title: 'Relationship Tooltips',
-            shortDescription: 'A Short Description',
-            longDescription: 'A Long Description',
-            date: '2020',
-            technologies: [
-                {
-                    name: 'C#',
-                    tooltip: 'Strongly typed 3rd generation language',
-                    colour: 'blue',
-                },
-                {
-                    name: 'Stardew Valley',
-                    tooltip:
-                        'Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.',
-                    colour: 'white',
-                },
-            ],
-        },
-        {
-            title: 'Relationship Tooltips',
-            shortDescription: 'A Short Description',
-            longDescription: 'A Long Description',
-            date: '2020',
-            technologies: [
-                {
-                    name: 'C#',
-                    tooltip: 'Strongly typed 3rd generation language',
-                    colour: 'blue',
-                },
-                {
-                    name: 'Stardew Valley',
-                    tooltip:
-                        'Farm video game released on multiple platforms on Microsoft XNA Framework. Community mod support.',
-                    colour: 'white',
-                },
-            ],
-        },
-    ]
+export const getStaticProps : GetStaticProps = async (context) => {
+  const heroRes = await fetch('https://m3ales-api.m3ales.repl.co/hero/')
+  let hero: Hero = await heroRes.json()
 
+  const eventsRes = await fetch('https://m3ales-api.m3ales.repl.co/timeline/')
+  let events: TimelineEvents[] = await eventsRes.json()
+  return {
+    props: {
+      hero: hero,
+      events: events
+    },
+    revalidate: 10
+  }
+}
+
+export const Home = ({ hero, events }): JSX.Element => {
     const navItems: NavbarItem[] = [
         {
             name: 'Home',
@@ -155,12 +53,12 @@ export const Home = (): JSX.Element => {
             <main>
                 <Navbar items={navItems} />
                 <Hero
-                    text="M3ales"
-                    message="Software, Photography, Music, stuff"
+                    text={hero.text}
+                    message={hero.message}
                     next="Projects"
                 />
                 <Section title="Projects" />
-                <Timeline events={timeline} />
+                <Timeline events={events}/>
                 <Section title="Contact" />
                 <Footer />
             </main>
