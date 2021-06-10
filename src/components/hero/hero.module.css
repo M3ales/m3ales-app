@@ -21,10 +21,10 @@
 /*this css is wild?*/
 .continue {
     position: absolute;
-    bottom: 50px;
-    left: 50%;
     width: 50px;
+    left: 50%;
     height: 50px;
+    bottom: 0px;
     transform: rotate(45deg);
 }
 
@@ -38,4 +38,13 @@
     border: none;
     border-bottom: 3px solid #fff;
     border-right: 3px solid #fff;
+}
+
+.continueButton {
+    position: absolute;
+    bottom: 50px;
+    left: 47vw;
+    width: 5vw;
+    min-width: 80px;
+    height: 50px;
 }

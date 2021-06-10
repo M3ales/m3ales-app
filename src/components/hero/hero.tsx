@@ -26,20 +26,22 @@ export function Hero({
                 <div className={styles.title}>{text}</div>
                 <div className={styles.subtitle}>{message}</div>
             </motion.div>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ ease: 'easeOut', duration: 2, delay: 3 }}
-                className={styles.continue}
-            >
-                <span
-                    onClick={() =>
-                        document
-                            .getElementById(next)
-                            .scrollIntoView({ behavior: 'smooth' })
-                    }
-                ></span>
-            </motion.div>
+            <div 
+                className={styles.continueButton}
+                onClick={() =>
+                document
+                    .getElementById(next)
+                    .scrollIntoView({ behavior: 'smooth' })}
+                >
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ ease: 'easeOut', duration: 2, delay: 3 }}
+                    className={styles.continue}
+                >
+                    <span></span>
+                </motion.div>
+            </div>
         </div>
     )
 }
