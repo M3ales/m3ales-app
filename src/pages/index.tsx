@@ -5,6 +5,7 @@ import { Hero } from '../components/hero/hero'
 import Navbar, { NavbarItem } from '../components/navbar/navbar'
 import { Section } from '../components/section/section'
 import { Timeline, TimelineEvents } from '../components/timeline/timeline'
+import { GetStaticProps } from 'next';
 
 export const getStaticProps : GetStaticProps = async (context) => {
   const heroRes = await fetch('https://m3ales-api.m3ales.repl.co/hero/')
