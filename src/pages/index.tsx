@@ -7,9 +7,14 @@ import { Section } from '../components/section/section'
 import { Timeline, TimelineEvents } from '../components/timeline/timeline'
 import { GetStaticProps } from 'next';
 
+interface HeroApiData {
+  message: string
+  text: string
+}
+
 export const getStaticProps : GetStaticProps = async (context) => {
   const heroRes = await fetch('https://m3ales-api.m3ales.repl.co/hero/')
-  let hero: Hero = await heroRes.json()
+  let hero: HeroApiData = await heroRes.json()
 
   const eventsRes = await fetch('https://m3ales-api.m3ales.repl.co/timeline/')
   let events: TimelineEvents[] = await eventsRes.json()
