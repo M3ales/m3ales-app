@@ -19,7 +19,7 @@ export function Hero({
             <motion.div
                 initial="hidden"
                 animate="visible"
-                transition={{ ease: 'easeOut', duration: 2, delay: 1 }}
+                transition={{ ease: 'easeOut', duration: 1, delay: 1 }}
                 variants={variants}
                 className={styles.centre}
             >
@@ -36,7 +36,7 @@ export function Hero({
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ ease: 'easeOut', duration: 2, delay: 3 }}
+                    transition={{ ease: 'easeOut', duration: 1, delay: 2 }}
                     className={styles.continue}
                 >
                     <span></span>
